@@ -51,7 +51,7 @@ local function do_auto_update(sources)
   if needs_update then
     local async = require('ts-install.async')
     async.run(function()
-      async.await(require('ts-install.install').update())
+      require('ts-install.install').update()
       local util = require('ts-install.util')
       util.mkpath(config.install_dir)
       util.write_file(timestamp_path, '')
